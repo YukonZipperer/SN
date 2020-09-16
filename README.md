@@ -2,33 +2,53 @@
 SN is an open source social network application.
 
 What you will need:
+
 VS Code (running and the project)
+
 Node.JS (for server side JS)
+
 Postman (chrome extension)
 
 How to Use:
+
 Download the repository as a .zip file
+
 Unizip the file
+
 Open VS Code and open the extracted folder
+
 In VS Code, create a new terminal
+
 Inside the terminal enter command 'node app.js' (this will start up the project), you will notice the terminal switch from powershell to node
+
 Once you get a statement in the terminal saying 'Server Started' and 'DB connected',
+
 Open Postman and continue to the next steps.
 
 #Sign Up
+
 Make a post request to 'localhost:3000/signup'
+
 Create a new header
+
 Create a key with 'Content-Type' and a value of 'application/json'
+
 Then in the body tab:
+
 copy and paste the following:
+
 {
 	"name": "User",
 	"email": "user@gmail.com",
 	"password": "password"
 }
+
 Change the name and email fields (leave the password the same)
+
 Hit Send (you will get back an error)
+
 The error will say that the password must have a number, so add a number and hit send again.
+
 You should then recieve a 'msg' saying that the signup worked.
 
 #Sign In
