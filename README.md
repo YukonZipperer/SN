@@ -64,8 +64,8 @@ How to Use:
 
 
 #Basic Project Overview:
-SN uses Mongo Atlas. The database is currently hosted with Microsoft Azure. This repository contains the API code. The API will communicate with the database and return information to be displayed for the user. There is currently no front end, you must use Postman to test and use this API.
+- SN uses Mongo Atlas. The database is currently hosted with Microsoft Azure. This repository contains the API code. The API will communicate with the database and return information to be displayed for the user. There is currently no front end, you must use Postman to test and use this API.
 
-The code is a bit of mess. Its basically a huge mix of code chunks found on Stack Overflow and modified to fit the project.
+- The code is a bit of mess. Its basically a huge mix of code chunks found on Stack Overflow and modified to fit the project.
 
 
