@@ -11,6 +11,7 @@ How to Use:
 - Unzip the file
 - Open VS Code and open the extracted folder
 - In VS Code, create a new terminal
+- Open up the package.json file and add all the npm packages listed and the respected versions
 - Inside the terminal enter command 'node app.js' (this will start up the project), you will notice the terminal switch from powershell to node
 - Once you get a statement in the terminal saying 'Server Started' and 'DB connected',
 - Open Postman and continue to the next steps.
