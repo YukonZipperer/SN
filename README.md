@@ -2,12 +2,9 @@
 SN is an open source social network application.
 
 What you will need:
-
-VS Code (running and the project)
-
-Node.JS (for server side JS)
-
-Postman (chrome extension)
+- VS Code (running and the project)
+- Node.JS (for server side JS)
+- Postman (chrome extension)
 
 How to Use:
 
