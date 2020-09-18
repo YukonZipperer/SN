@@ -1,5 +1,7 @@
 # SN - OSS Social Network
-SN is an open source social network application.
+SN is an open source social network application, made using a MERN stack.
+
+Note: This is just the API
 
 What you will need:
 - VS Code (running and the project)
