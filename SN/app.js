@@ -36,7 +36,7 @@ mongoose.connect(connection, {
 
 //imports post routes
 const postRoutes = require("./routes/post-routes.js");
-//imports authenticaiton routes
+//imports authentication routes
 const authenRoutes = require("./routes/authen-routes.js");
 //sets app to use post routes
 app.use("/", postRoutes);
@@ -58,8 +58,8 @@ app.use(function(err, req, res, next){
 //these commands set up mongo and run localized server
 //C:\mongodb\bin\mongod.exe
 //C:\mongodb\bin\mongo.exe
-//listening on port 3000
-app.listen(3000, function(){
+//listening on port 8080
+app.listen(8080, function(){
   //prints message when server started
     console.log("Server Started");
 });

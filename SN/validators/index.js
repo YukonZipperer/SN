@@ -1,4 +1,4 @@
-//exports post validaor
+//exports post validator
 exports.postValidator = function(req, res, next) {
     //checks that post title is not empty
     req.check("title", "Title is Required").notEmpty();

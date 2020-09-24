@@ -19,7 +19,7 @@ How to Use:
 - Open Postman and continue to the next steps.
 
 #Sign Up
-- Make a post request to 'localhost:3000/signup'
+- Make a post request to 'localhost:8080/signup'
 - Create a new header
 - Create a key with 'Content-Type' and a value of 'application/json'
 - Then in the body tab:
@@ -32,22 +32,22 @@ How to Use:
 - Change the name and email fields (leave the password the same)
 - Hit Send (you will get back an error)
 - The error will say that the password must have a number, so add a number and hit send again.
-- You should then recieve a 'msg' saying that the signup worked.
+- You should then receive a 'msg' saying that the signup worked.
 
 #Sign In
-- make a post request to 'localhost:3000/signin'
+- make a post request to 'localhost:8080/signin'
 - Keep the header the same
 - Inside the body tab, remove the name attribute
 - Then hit send.
 - You should recieve a JSON statement back with an authentication token, your email, name, and id in the database
 
 #Sign Out
-- make a get request to 'localhost:3000/signout'
+- make a get request to 'localhost:8080/signout'
 - You should get a 'msg' back saying that it was successful
 
 #Getting Posts
 - To get posts you must be signed in. But, try without being signed in first.
-- Make a get request to 'localhost:3000/'
+- Make a get request to 'localhost:8080/'
 - You should get a message back saying that you are not authorized.
 - Complete the sign in process again, copy the authentication token
 - Create a new header with key of 'Authorization'. In the value section type 'Bearer token', replacing 'token' with the token you copied earlier.
@@ -55,7 +55,7 @@ How to Use:
 - You should now see a list of posts in the database.
 
 #Making Posts
-- Make a post request to 'localhost:3000/post'
+- Make a post request to 'localhost:8080/post'
 - Inside the JSON header, type:
 {
 	"title": "New Post",
