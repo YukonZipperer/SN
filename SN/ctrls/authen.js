@@ -51,7 +51,7 @@ exports.signin = function(req, res){
                 error: "Email or Password are incorrect"
             });
         }
-        //creates tpken variable
+        //creates token variable
         //signs token with user credentials
         const token = jsonWebToken.sign({_id: user._id}, process.env.jsonWebTokenS);
         //names cookie/token and sets expiration date
