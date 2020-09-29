@@ -55,7 +55,7 @@ exports.signin = function(req, res){
         //signs token with user credentials
         const token = jsonWebToken.sign({_id: user._id}, process.env.jsonWebTokenS);
         //names cookie/token and sets expiration date
-        res.cookie("authen-token", token, {expire: new Date() + 9999})
+        res.cookie("authen-token", token, {expire: "30 days"})
         const {_id, name, email} = user;
         return res.json({token, user: {_id, email, name}});
 
