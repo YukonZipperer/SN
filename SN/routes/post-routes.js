@@ -10,9 +10,13 @@ const postCtrl = require("../ctrls/posts.js");
 //requires exported functions from validators
 const {postValidator} = require('../validators/index.js');
 
+const {findId} = require("../ctrls/user.js");
 //get posts route, requires you to be signed in
 router.get("/", requireSignin, postCtrl.getPosts);
 //post route for creating new posts
-router.post("/post", postValidator, postCtrl.createPost);
+router.post("/post", requireSignin, postValidator, postCtrl.createPost);
+
+router.param("userid", findId)
+
 //exports router
 module.exports = router;
