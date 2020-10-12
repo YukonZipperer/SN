@@ -65,6 +65,27 @@ How to Use:
 - You should get back the post id, title, and body.
 - If you repeat the process of requesting all the posts, your new post should show up.
 
+#Getting User Profile
+- Make a get request to 'localhost:8080/user/:id'
+ enter your user/profile id in place of ':id'
+- Make sure the authorization header is attached, and then send
+- You should get information abou the user returned
+
+#Updating Profile
+- Make a put request to 'localhost:8080/user/:id'
+ enter your user/profile id in place of ':id'
+- attach the authorization and body headers. Inside the body header type what you want to update. Example:
+{
+	"name": "Updated Name"
+}
+- Send the request and you should get the updated profile returned
+
+#Deleting Account
+- Make a delete request to 'localhost:8080/user/:id'
+ enter your user/profile id in place of ':id'
+- Make sure the authorization header is attached, then send the request
+- You should get a message back saying that the account deletion was successful
+
 
 #Basic Project Overview:
 - SN uses Mongo Atlas. The database is currently hosted with Microsoft Azure. This repository contains the API code. The API will communicate with the database and return information to be displayed for the user. There is currently no front end, you must use Postman to test and use this API.
