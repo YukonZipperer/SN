@@ -1,7 +1,17 @@
 # SN - OSS Social Network
 SN is an open source social network application, made using a MERN stack.
 
-Note: This is just the API
+Features:
+- Create Accounts
+- Update Accounts
+- Delete Accounts
+- Retrieving Accounts
+- Authentication
+- Viewing and getting all profiles
+- Create Posts
+- Retrieve all posts
+
+*This is just the API
 
 What you will need:
 - VS Code (running and the project)
