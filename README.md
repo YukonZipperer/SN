@@ -86,6 +86,7 @@ How to Use:
 - Make sure the authorization header is attached, then send the request
 - You should get a message back saying that the account deletion was successful
 
+*note the 'localhost:8080/users' route should return all the users in the database, but it still needs some work
 
 #Basic Project Overview:
 - SN uses Mongo Atlas. The database is currently hosted with Microsoft Azure. This repository contains the API code. The API will communicate with the database and return information to be displayed for the user. There is currently no front end, you must use Postman to test and use this API.
