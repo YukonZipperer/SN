@@ -64,16 +64,15 @@ How to Use:
 - Now select the new header and deselect the old one.
 - You should now see a list of posts in the database.
 
-#Making Posts
-- Make a post request to 'localhost:8080/post'
-- Inside the JSON header, type:
-{
-	"title": "New Post",
-	"body": "This is a new post"
-}
-- With this header selected, hit send
-- You should get back the post id, title, and body.
-- If you repeat the process of requesting all the posts, your new post should show up.
+#Making Posts (note this has changed from previous versions)
+- Make a post request to 'localhost:8080/post/new/:id'
+enter your user/profile id in place of ':id'
+- Make sure you have the authorization header selected in addition to the content header (you must be signed in to make a post)
+- In the select body in Postman
+- Change the data type from 'raw' to 'x-www-form-urlencoded'
+- You will now get a form that wants keys and values
+- title one key 'title' and the other 'body'. In the value sections, type what you want the title and body of the post to be
+- Hit send and you should recieve information about your post back. You will also get information about the profile which made the post
 
 #Getting User Profile
 - Make a get request to 'localhost:8080/user/:id'
