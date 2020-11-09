@@ -10,6 +10,7 @@ Features:
 - Viewing and getting all profiles
 - Create Posts
 - Retrieve all posts
+- Retrieve posts by user
 
 *This is just the API
 
@@ -56,13 +57,16 @@ How to Use:
 - You should get a 'msg' back saying that it was successful
 
 #Getting Posts
-- To get posts you must be signed in. But, try without being signed in first.
 - Make a get request to 'localhost:8080/'
-- You should get a message back saying that you are not authorized.
-- Complete the sign in process again, copy the authentication token
-- Create a new header with key of 'Authorization'. In the value section type 'Bearer token', replacing 'token' with the token you copied earlier.
-- Now select the new header and deselect the old one.
-- You should now see a list of posts in the database.
+- You should now see a list of posts in the database with the author shown
+- Note: Some posts may not show an author, these are posts from an older version
+
+#Getting Posts from Specific User
+*You do not need to be signed in*
+- Make a get request to 'localhost:8080/posts/get/:userid'
+Replace ':userid' with the id of the user you want to view posts from
+- You shouldn't need any headers selected
+- Hit send, and you should see posts in the database by that user. They are ordered by date, so the newest ones are on the top and the oldest ones are at the bottom
 
 #Making Posts (note this has changed from previous versions)
 - Make a post request to 'localhost:8080/post/new/:id'
