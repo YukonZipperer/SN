@@ -1,5 +1,5 @@
 {
-  "name": "SN",
+  "name": "social-network",
   "version": "1.0.0",
   "description": "This is a simple social network application.",
   "main": "app.js",
@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "express-validator": "^5.3.1",
+    "formidable": "^1.2.2",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.10.2",
