@@ -17,7 +17,7 @@ Features:
 What you will need:
 - VS Code (running and the project)
 - Node.JS (for server side JS)
-- Postman (chrome extension)
+- Postman (This used to be a Chrome Extension, but you will now need to download it from the Postman website https://www.postman.com/downloads/)
 
 How to Use:
 - Download the repository as a .zip file
@@ -94,6 +94,17 @@ enter your user/profile id in place of ':id'
 	"name": "Updated Name"
 }
 - Send the request and you should get the updated profile returned
+
+#Updating Posts
+- Make a Put request to 'localhost:8080/post/:postid'
+ enter the id of the post you want to update in place of ':postid'
+- In the Body, select 'raw' and 'JSON' then type in the attributes you want to change
+ ex. 
+{
+    "title":"new title"
+}
+- Hit send and you should see the new updated post sent back
+ 
 
 #Deleting Posts
 - Make a delete request to 'localhost:8080/post/:postid'
