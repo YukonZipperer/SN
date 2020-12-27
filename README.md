@@ -51,6 +51,8 @@ How to Use:
 - Inside the body tab, remove the name attribute
 - Then hit send.
 - You should recieve a JSON statement back with an authentication token, your email, name, and id in the database
+- After signing in, you should create a new header titled 'Authorization' with a value of 'Bearer (authentication token here)'
+ This authentication header will be very important to do things, such as deleting posts and making posts
 
 #Sign Out
 - make a get request to 'localhost:8080/signout'
@@ -92,6 +94,12 @@ enter your user/profile id in place of ':id'
 	"name": "Updated Name"
 }
 - Send the request and you should get the updated profile returned
+
+#Deleting Posts
+- Make a delete request to 'localhost:8080/post/:postid'
+ enter the id of the post in place of ':postid' (You can obtain the post id by getting posts from the account you want to delete the post from)
+- Attach the authorization header
+- Send the request and you should get a message saying that the post has been deleted
 
 #Deleting Account
 - Make a delete request to 'localhost:8080/user/:id'
