@@ -15,8 +15,13 @@ const {findId} = require("../ctrls/user.js");
 router.get("/", postCtrl.getPosts);
 //post route for creating new posts
 router.post("/post/new/:userid", requireSignin, postCtrl.createPost, postValidator);
-router.get("/posts/get/:userid", postCtrl.postsById);
+router.get("/posts/get/:userid", postCtrl.postsByUser);
+
+router.delete("/post/:postid", requireSignin, postCtrl.isAuthor, postCtrl.deletePost);
+router.put("/post/:postid", requireSignin, postCtrl.isAuthor, postCtrl.updatePost);
+
 router.param("userid", findId)
+router.param("postid", postCtrl.postById)
 
 //exports router
 module.exports = router;
