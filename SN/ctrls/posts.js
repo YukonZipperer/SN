@@ -2,12 +2,14 @@
 const Post = require("../models/post.js");
 const formidable = require("formidable");
 const fileSystem = require("fs");
+const _ = require("lodash");
 //exports getposts function
 exports.getPosts = function(req, res){
     //finds post from database
     const posts = Post.find()
     .populate("author", "_id name")
-    .select("_id title body")
+    .select("_id title body created")
+    .sort("created")
         .then(posts => {
             //returns posts found in json
             res.json({ posts });
@@ -43,10 +45,26 @@ exports.createPost = function(req, res){
     });
 };
 
-exports.postsById = function(req, res){
+exports.postById = function(req, res, next, id){
+    Post.findById(id)
+    .populate("author", "_id name")
+    .select("_id title body created")
+    .exec(function(err, posts){
+        if(err){
+            return res.status(400).json({
+                err: err
+            });
+        }
+        req.post = posts;
+        next();
+    });
+};
+
+exports.postsByUser = function(req, res){
     Post.find({author: req.profile._id})
     .populate("author", "_id name")
     .sort("_created")
+    .select("_id title body created")
     .exec(function(err, posts){
         if(err){
             return res.status(400).json({
@@ -54,5 +72,48 @@ exports.postsById = function(req, res){
             });
         }
         res.json(posts);
+    });
+};
+
+exports.isAuthor = function(req, res, next){
+    console.log("in function");
+    let isAuthor = req.post && req.auth && req.post.author._id == req.auth._id;
+    console.log("req.post"+req.post);
+    console.log("req.auth"+req.auth);
+    console.log("req.post.author._id"+req.post.author._id);
+    console.log("req.auth._id"+req.auth._id);
+    if(!isAuthor){
+        return res.status(403).json({
+            err: "Not Authorized"
+        });
+    }
+    next();
+};
+
+exports.deletePost = function(req, res){
+    let post = req.post;
+    post.remove(function(err, deletedPost){
+        if(err){
+            return res.status(400).json({
+                err: err
+            });
+        }
+        res.json({
+            msg: "Post has been deleted"
+        });
+    });
+}
+
+exports.updatePost = function(req, res, next){
+    let post = req.post
+    post = _.extend(post, req.body)
+    post.updated = Date.now()
+    post.save(function(err){
+        if(err){
+            return res.status(400).json({
+                err: err
+            });
+        }
+        res.json(post);
     });
 };
