@@ -14,6 +14,8 @@ app.use(cookieParser());
 const dotenv = require("dotenv");
 //configures dotenv
 dotenv.config();
+
+const cors = require("cors");
 //requires express-validator package
 const expressValidator = require("express-validator");
 //sets app to use express validator package
@@ -39,11 +41,16 @@ const postRoutes = require("./routes/post-routes.js");
 //imports authentication routes
 const authenRoutes = require("./routes/authen-routes.js");
 const userRoutes = require("./routes/user-routes.js");
+
+app.use(cors())
+
 //sets app to use post routes
 app.use("/", postRoutes);
 //sets app to use authentication routes
 app.use("/", authenRoutes);
 app.use("/", userRoutes);
+
+
 
 //checks for specific error regarding getting posts while not signed in
 app.use(function(err, req, res, next){
