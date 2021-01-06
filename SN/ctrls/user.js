@@ -24,7 +24,7 @@ exports.getUser = function(req, res){
 
 //checks to make sure you are authorized to view profile
 exports.isAuth = function(req, res, next){
-    const author = req.profile && req.auth && req.profile._id === req.auth._id
+    const author = req.profile && req.auth && req.profile._id == req.auth._id
     if(!author){
         return res.status(403).json({
             err: "User is not authorized"
@@ -70,8 +70,7 @@ exports.all = function(req, res){
                 err: err
             });
         }
-        res.json({
-            users: userf
-        })
+        res.json(userf)
     }).select("name email updated created");
 }
+
