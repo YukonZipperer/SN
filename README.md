@@ -33,7 +33,7 @@ Below are instructions for how to use each feature:
 
 #Accounts#
 
-	#Sign Up
+#Sign Up
 	- Make a post request to 'localhost:8080/signup'
 	- Create a new header
 	- Create a key with 'Content-Type' and a value of 'application/json'
@@ -49,7 +49,7 @@ Below are instructions for how to use each feature:
 	- The error will say that the password must have a number, so add a number and hit send again.
 	- You should then receive a 'msg' saying that the signup worked.
 
-	#Sign In
+#Sign In
 	- make a post request to 'localhost:8080/signin'
 	- Keep the header the same
 	- Inside the body tab, remove the name attribute
@@ -58,17 +58,17 @@ Below are instructions for how to use each feature:
 	- After signing in, you should create a new header titled 'Authorization' with a value of 'Bearer (authentication token here)'
 	 This authentication header will be very important to do things, such as deleting posts and making posts
 
-	#Sign Out
+#Sign Out
 	- make a get request to 'localhost:8080/signout'
 	- You should get a 'msg' back saying that it was successful
 	
-	#Getting User Profile
+#Getting User Profile
 	- Make a get request to 'localhost:8080/user/:id'
 	 enter your user/profile id in place of ':id'
 	- Make sure the authorization header is attached, and then send
 	- You should get information abou the user returned
 
-	#Updating Profile
+#Updating Profile
 	- Make a put request to 'localhost:8080/user/:id'
 	 enter your user/profile id in place of ':id'
 	- attach the authorization and body headers. Inside the body header type what you want to update. Example:
@@ -77,7 +77,7 @@ Below are instructions for how to use each feature:
 	}
 	- Send the request and you should get the updated profile returned
 	
-	#Deleting Account
+#Deleting Account
 	- Make a delete request to 'localhost:8080/user/:id'
 	 enter your user/profile id in place of ':id'
 	- Make sure the authorization header is attached, then send the request
@@ -86,19 +86,19 @@ Below are instructions for how to use each feature:
 
 #Posts#
 
-	#Getting Posts
+#Getting Posts
 	- Make a get request to 'localhost:8080/'
 	- You should now see a list of posts in the database with the author shown
 	- Note: Some posts may not show an author, these are posts from an older version
 
-	#Getting Posts from Specific User
+#Getting Posts from Specific User
 	*You do not need to be signed in*
 	- Make a get request to 'localhost:8080/posts/get/:userid'
 	Replace ':userid' with the id of the user you want to view posts from
 	- You shouldn't need any headers selected
 	- Hit send, and you should see posts in the database by that user. They are ordered by date, so the newest ones are on the top and the oldest ones are at the bottom
 
-	#Making Posts (note this has changed from previous versions)
+#Making Posts (note this has changed from previous versions)
 	- Make a post request to 'localhost:8080/post/new/:id'
 	enter your user/profile id in place of ':id'
 	- Make sure you have the authorization header selected in addition to the content header (you must be signed in to make a post)
@@ -108,7 +108,7 @@ Below are instructions for how to use each feature:
 	- title one key 'title' and the other 'body'. In the value sections, type what you want the title and body of the post to be
 	- Hit send and you should recieve information about your post back. You will also get information about the profile which made the post
 
-	#Updating Posts
+#Updating Posts
 	- Make a Put request to 'localhost:8080/post/:postid'
 	 enter the id of the post you want to update in place of ':postid'
 	- In the Body, select 'raw' and 'JSON' then type in the attributes you want to change
@@ -118,7 +118,7 @@ Below are instructions for how to use each feature:
 	}
 	- Hit send and you should see the new updated post sent back
 
-	#Deleting Posts
+#Deleting Posts
 	- Make a delete request to 'localhost:8080/post/:postid'
 	 enter the id of the post in place of ':postid' (You can obtain the post id by getting posts from the account you want to delete the post from)
 	- Attach the authorization header
