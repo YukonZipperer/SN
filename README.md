@@ -17,6 +17,16 @@ What you will need:
 - VS Code
 - Node.JS
 - Postman (This used to be a Chrome Extension, but you will now need to download it from the Postman website https://www.postman.com/downloads/)
+- MongoDB Atlas Account
+
+Setting up the database:
+- Sign up for a MongoDB Atlas Account
+- Create a new cluster (use the free version)
+- Choose your host (GCP, AWS, Azure)
+- Name the cluster
+- Finally deploy the cluster
+- You will need to get a mongouri string (this allows you to connect to your database). There should be a button to generate one or you can refer to the documentation (https://docs.mongodb.com/manual/reference/connection-string/)
+- Once you have the string, add it to the .env file as 'MURI=[YOURSTRING]'
 
 How to Use:
 - Download the repository as a .zip file
