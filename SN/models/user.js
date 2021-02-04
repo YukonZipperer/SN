@@ -31,6 +31,14 @@ const userSchema = new mongoose.Schema({
     },
     //date it was updated
     updated: Date,
+    photo: {
+        data: Buffer,
+        contentType: String
+    },
+    about: {
+        type: String,
+        trim: true
+    }
 })
 //methods for user schema
 userSchema.methods = {
