@@ -9,10 +9,10 @@ exports.getPosts = function(req, res){
     const posts = Post.find()
     .populate("author", "_id name")
     .select("_id title body created")
-    .sort("created")
+    .sort({created: -1})
         .then(posts => {
             //returns posts found in json
-            res.json({ posts });
+            res.json(posts);
         })
 };
 //exports createpost function
